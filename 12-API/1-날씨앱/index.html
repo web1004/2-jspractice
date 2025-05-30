@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>API-날씨앱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="noti">
+    위치 정보를 가져올 수 없습니다.<br>
+    위치 설정을 확인해주세요.
+  </div>
+
+  <div class="container">
+    <div class="current-weather">
+      <img class="icon" alt=""> <!-- 날씨를 가져오면서 자동으로 나오게 함 -->
+      <div class="temp">현재 온도</div>
+      <div class="info">
+        <div class="weather">현재 날씨</div>
+        <div class="city">현재 위치</div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="index-1.js"></script>
+</body>
+</html>
+
+<!-- 
+api를 요청할때 아무 조건없이 url으로만 요청을 하는 경우도 있지만 
+API-KEY 라는 것을 사용해야만 요청을 처리하는 경우도 있다.
+
+*API-KEY란 ?
+제공자가 누가 우리 서버의 데이터를 사용하려고 하는지 아이디처럼 식별하기 위해서 
+할당해주는 api 서버와 우리사이에 약속된 비밀번호 같은 것을 말한다.
+
+https://openweathermap.org/
+https://openweathermap.org/weather-conditions
+-->

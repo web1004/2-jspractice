@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>그림판</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="menu">
+      <div class="item">
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+      </div>
+
+      <div class="item">
+        <label for="width">Width</label>
+        <input
+          type="number"
+          name="width"
+          id="width"
+          min="1"
+          max="10"
+          value="5"
+        />
+      </div>
+
+      <button class="clear">Clear</button>
+      <button class="save">Save to Image</button>
+    </div>
+
+    <canvas width="550" height="350"></canvas>
+    <!-- canvas태그는 html5에서 지원하는 요소로 스크립트를 사용해서 문서의 도형이나 글씨등을 그릴수 있는 요소이다. -->
+  </div>
+
+  <script src="index-1.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+★나만의 크롬시작화면 만들기
+
+(1)디지털시계 만들기(clock.js)
+(2)검색바 만들기(search.js)
+(3)API를 사용해 명언 설정하기(quote.js)
+(4)북마크바 만들기(bookmark-toggle.js)
+(5)북마크 아이템 추가하기(bookmark.js)
+(6)프로젝트 적용하기
+
+-unsplash에 회원가입
+unsplash  랜덤 이미지 주소 : https://source.unsplash.com/user/가입한 아이디/likes
+
+*구글조소창에서 아래 주소로 검색하여 연결
+chrome://extensions
+
+오른쪽상단의 개발자모드 -> 맨위에 "압축해제된 확장된 프로그램을 로드합니다."  클릭
+개발한 소스가 있는 newtab 폴더를 선택한다.
+newtab 이 추가됨

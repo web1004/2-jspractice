@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  padding-top: 30px;
+  width: 60%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: royalblue;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+  width: 100%;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 10px;
+  background-color:#eff6f6;
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+.container ul li h3{
+  margin: 0;
+}
+.name {
+  font-size: 24px;
+  padding-right: 10px;
+}
+
+.price {
+  font-size: 18px;
+  color: red;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #eee;
+}
+
+input[type=checkbox] {
+  margin-right: 10px;
+}
+
+.total{
+  font-size: 32px;
+}
+.total .total-price{
+  color: royalblue;
+}

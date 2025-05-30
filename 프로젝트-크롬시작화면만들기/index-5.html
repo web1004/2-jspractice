@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>NewTab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="main-wrapper">
+      <div class="today-info">
+        <div class="date" id="date">
+          <!-- 날짜&요일 -->
+        </div>
+        <div class="time" id="time">
+          <!-- 현재시간 -->
+        </div>
+
+        <div class="search">
+          <input type="text" id="search-input" placeholder="검색어를 입력하세요." autocomplete="off">
+          <!-- autocomplete="off" :search 박스를 클릭했을때 이전에 검색했던 단어들이 안나오게 함  -->
+        </div>
+        <div class="quote" id="quote">
+          <!-- 명언 -->
+        </div>
+      </div>
+    </div>
+
+    <div class="bookmark-open" id="bookmark-open">
+      <div id="bookmark-open-btn">북마크 닫기</div> <!-- 북마크바가 열린상태 -->
+    </div>
+    <div class="bookmark-close" id="bookmark-close">
+      <div id="bookmark-close-btn">북마크 열기</div> <!-- 북마크바가 닫힌상태 -->
+    </div>
+    <div class="bookmark-bar" id="bookmark-bar">
+      <!-- 북마크바 -->
+      <div class="bookmark-item-add-btn" id="bookmark-item-add-btn">
+        +북마크 추가
+      </div>
+      <div class="bookmark-item-input-form" id="bookmark-item-input-form">
+        <div class="bookmark-input">
+          <div class="new-bookmark-name">
+            <div class="label">이름</div>
+            <input type="text" id="new-bookmark-name-input">
+          </div>
+          <div class="new-bookmark-url">
+            <div class="label">주소</div>
+            <input type="text" id="new-bookmark-url-input">
+          </div>
+        </div>
+        <div class="bookmark-item-input-btn">
+          <div class="cancel-btn" id="cancel-btn">취소</div>
+          <div class="add-btn" id="add-btn">추가</div>
+        </div>
+      </div>
+      <div class="bookmark-list" id="bookmark-list"></div>
+    </div>
+
+  </div>
+
+  <!-- Script Source -->
+  <script src="js/clock.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/bookmark-toggle.js"></script>
+  <script src="js/bookmark.js"></script>
+
+</body>
+</html>

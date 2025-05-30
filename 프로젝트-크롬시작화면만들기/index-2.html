@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>NewTab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="main-wrapper">
+      <div class="today-info">
+        <div class="date" id="date">
+          <!-- 날짜&요일 -->
+        </div>
+        <div class="time" id="time">
+          <!-- 현재시간 -->
+        </div>
+
+        <div class="search">
+          <input type="text" id="search-input" placeholder="검색어를 입력하세요." autocomplete="off">
+          <!-- autocomplete="off" :search 박스를 클릭했을때 이전에 검색했던 단어들이 안나오게 함  -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Source -->
+  <script src="js/clock.js"></script>
+  <script src="js/search.js"></script>
+
+</body>
+</html>

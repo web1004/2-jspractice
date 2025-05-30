@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-단계별완성폼구현하기</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index-5.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="tab-status">
+      <span class="tab active">1</span>
+      <span class="tab">2</span>
+      <span class="tab">3</span>
+    </div>
+    <form action="#">
+      <div role="tab-list"> <!-- 태그의 의미를 좀더 부여 -->
+        <div role="tabpanel" class="tabpanel">
+          <h3><label for="color">가장 좋아하는 색상은 무엇인가요?</label></h3>
+          <textarea name="color" id="color" cols="30" rows="10" class="form-input" placeholder="핑크색"></textarea>
+        </div>
+        <div role="tabpanel" class="tabpanel hidden">
+          <h3><label for="food">가장 좋아하는 음식은 무엇인가요?</label></h3>
+          <textarea name="color" id="food" cols="30" rows="10" class="form-input" placeholder="소갈비"></textarea>
+        </div>
+        <div role="tabpanel" class="tabpanel hidden">
+          <h3><label for="sports">가장 좋아하는 스포츠는 무엇인가요?</label></h3>
+          <textarea name="color" id="sports" cols="30" rows="10" class="form-input" placeholder="걷기"></textarea>
+        </div>
+      </div>
+      <div class="pagination">
+        <button type="button" class="btn hidden" id="prev">previous</button>
+        <button type="button" class="btn" id="next">next</button>
+        <button type="submit" class="btn btn-submit hidden" id="submit">submit</button>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>

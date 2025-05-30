@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>1-DOM실습</title>
+  <script src="script-8.js" defer></script>
+</head>
+<body>
+  
+  <section>
+    <h2 id="title">운동</h2>
+    <form name="myForm">
+      <input type="text" name="myText" placeholder="운동을 입력해주세요">
+      <button type="button" id="before">앞에추가</button> 
+      <button type="button" id="button">뒤에추가</button>
+      <button type="button" id="target-remove">타깃제거</button> <!-- (04)버튼추가 -->
+      <button type="button" id="target-all-remove">전체제거</button> <!-- (08)버튼추가 -->
+    </form>
+    <ul class="list">
+      <li class="item" id="target">  <!-- (03)id추가 -->
+        스쿼트
+        <button class="remove-btn">X</button>  <!-- (05) X버튼추가-->
+      </li>
+    </ul>
+  </section>
+
+</body>
+</html>
