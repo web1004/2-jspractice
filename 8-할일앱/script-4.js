@@ -4,9 +4,9 @@ const form =document.querySelector('form');
 const input =document.querySelector('input');
 const ul = document.querySelector('ul');
 
-//삭제함수
+//(2)삭제함수
 const delItem = (event) => {
-  //console.log('삭제!!!!!!!');
+  //console.log('삭제!!!!!!!!');
   //console.log(event);
   //console.log(event.target);
   //console.log(event.target.parentElement);
@@ -19,14 +19,15 @@ const addItem = (text) => {
   if(text !== ''){
     const li = document.createElement('li'); 
     const button = document.createElement('button'); 
-    const span =document.createElement('span');
+    const span =document.createElement('span'); 
+
     span.innerText = text;
     button.innerText = '삭제';
-    button.addEventListener('click',delItem);  //추가
-
+    button.addEventListener('click',delItem);  //(1)추가
+    
     ul.appendChild(li); 
     li.appendChild(span);
-    li.appendChild(button);    
+    li.appendChild(button);  
   };
 };
 
@@ -36,4 +37,4 @@ const handler = (event) => {
   input.value = '';
 };
 
-form.addEventListener('submit',handler);
+form.addEventListener('submit', handler);

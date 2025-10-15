@@ -1,8 +1,10 @@
-//7.앞에 추가할때도 뒤에 추가하는것과 동일하게 X버튼과 클래스 추가하기
+//최종소스
 
 let addBtn = document.getElementById('button');
 let addBeforeBtn = document.getElementById('before'); 
-let removeTargetBtn = document.querySelector('#target-remove'); 
+let removeTargetBtn = document.querySelector('#target-remove');
+let removeAllTargetBtn = document.querySelector('#target-all-remove');  
+let removeBtn = document.querySelector('.remove-btn');
 let inputBox =document.querySelector('input');
 
 addBtn.addEventListener('click', function(){
@@ -18,6 +20,7 @@ addBtn.addEventListener('click', function(){
 
   ul.appendChild(li);
   li.appendChild(button);
+  li.classList.add('item');
   inputBox.value = '';
   inputBox.focus();
 });
@@ -28,8 +31,6 @@ addBeforeBtn.addEventListener('click', function(){
   let targetLi = document.querySelector('li#target');
   li.textContent = inputBox.value; 
   
-  //(1)앞에 추가할때도 뒤에 추가하는것과 동일하게 X버튼과 클래스 추가
-  //뒤에추가버튼 내용에서 복사
   let button = document.createElement('button');  
   button.textContent = 'X'; 
   button.classList.add('remove-btn');
@@ -37,9 +38,10 @@ addBeforeBtn.addEventListener('click', function(){
   button.addEventListener('click',removeParentNode); 
   
   ul.insertBefore(li, targetLi);
-  li.appendChild(button); //뒤에추가버튼 내용에서 복사
-  inputBox.value = ''; //뒤에추가버튼 내용에서 복사
-  inputBox.focus(); //뒤에추가버튼 내용에서 복사
+  li.appendChild(button);
+  li.classList.add('item'); 
+  inputBox.value = ''; 
+  inputBox.focus(); 
 });
 
 removeTargetBtn.addEventListener('click', function(){
@@ -52,3 +54,10 @@ function removeParentNode(event){
   inputBox.value = '';
   inputBox.focus();
 };
+
+removeAllTargetBtn.addEventListener('click', function(){
+  const itemList = document.querySelectorAll('.item');
+  itemList.forEach(item => item.remove());
+});
+
+removeBtn.addEventListener('click',removeParentNode)

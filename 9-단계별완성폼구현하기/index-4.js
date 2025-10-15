@@ -72,4 +72,4 @@ function setButtonPermissions(input){
   };
 };
 
-validateEntry();
+validateEntry(); //열자마자 실행함

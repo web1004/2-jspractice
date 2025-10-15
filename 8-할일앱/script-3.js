@@ -13,11 +13,11 @@ const addItem = (text) => {
     //li.innerText = input.value; 
     span.innerText = text;
     button.innerText = '삭제';
-
+    
     //<li><span>..</span><button>...</button></li>
     ul.appendChild(li); 
     li.appendChild(span);
-    li.appendChild(button);    
+    li.appendChild(button);  
   };
 };
 
@@ -27,4 +27,4 @@ const handler = (event) => {
   input.value = '';
 };
 
-form.addEventListener('submit',handler);
+form.addEventListener('submit', handler);

@@ -6,7 +6,7 @@ const ul = document.querySelector('ul');
 const todoCount = document.querySelector('.todo-count'); //추가
 const clearAll = document.querySelector('.clear-all'); //추가
 
-let todos = []; 
+let todos = [];
 
 const save = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -19,47 +19,48 @@ const updateTodoCount = () => {
 
 const delItem = (event) => {
   const target = event.target.parentElement;
-  todos = todos.filter((todo) => todo.id !== parseInt(target.id)); 
-  
-  save();  
+
+  todos = todos.filter((todo) => todo.id !== parseInt(target.id));  
+
+  save(); 
   target.remove();
   updateTodoCount(); //함수호출
 };
 
 //(1)삭제버튼-아이콘폰트이미지로 수정
-const addItem = (todo) => {  
-  if(todo !== ''){  
+const addItem = (todo) => { 
+  if(todo !== ''){ 
     const li = document.createElement('li'); 
     //const button = document.createElement('button'); 
-    const span =document.createElement('span');
+    const span =document.createElement('span'); 
     const icon = document.createElement('i');
 
-    icon.classList.add('fa-solid','fa-trash-can');
-    span.innerText = todo.text;  
+    icon.classList.add('fa-solid','fa-trash-can'); //추가
+    span.innerText = todo.text; 
     //button.innerText = '삭제';
     //button.addEventListener('click',delItem); 
-    icon.addEventListener('click',delItem); 
-
+    icon.addEventListener('click',delItem); //수정
+    
     ul.appendChild(li); 
     li.appendChild(span);
-    //li.appendChild(button);  
+    //li.appendChild(button);
     li.appendChild(icon);
     li.id = todo.id; 
-
+    
     updateTodoCount(); //함수호출
   };
 };
 
 const handler = (event) => {
-  event.preventDefault();
-  
+  event.preventDefault(); 
+
   const todo = {
     id: Date.now(), 
     text: input.value,
   };
 
-  todos.push(todo);
-  addItem(todo);  
+  todos.push(todo); 
+  addItem(todo);
   save();
   input.value = '';
 };
@@ -71,7 +72,6 @@ const init = () => {
     userTodos.forEach((todo) => {
       addItem(todo);
     });
-    todos = userTodos;
   };
 };
 
@@ -84,4 +84,4 @@ clearAll.addEventListener('click', () => {
 });
 
 init();
-form.addEventListener('submit',handler);
+form.addEventListener('submit', handler);

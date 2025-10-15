@@ -4,7 +4,7 @@ const form =document.querySelector('form');
 const input =document.querySelector('input');
 const ul = document.querySelector('ul');
 
-let todos = []; 
+let todos = [];
 
 const save = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -12,64 +12,66 @@ const save = () => {
 
 const delItem = (event) => {
   const target = event.target.parentElement;
-  todos = todos.filter((todo) => todo.id !== parseInt(target.id)); 
-  
-  save();  
+
+  todos = todos.filter((todo) => todo.id !== parseInt(target.id));  
+
+  save(); 
   target.remove();
 };
 
-const addItem = (todo) => {  
-  if(todo !== ''){  
+const addItem = (todo) => { 
+  if(todo !== ''){ 
     const li = document.createElement('li'); 
     const button = document.createElement('button'); 
-    const span =document.createElement('span');
-    span.innerText = todo.text;  
-    button.innerText = '삭제';
-    button.addEventListener('click',delItem);  
+    const span =document.createElement('span'); 
 
+    span.innerText = todo.text; 
+    button.innerText = '삭제';
+    button.addEventListener('click',delItem); 
+    
     ul.appendChild(li); 
     li.appendChild(span);
-    li.appendChild(button);  
-    li.id = todo.id; 
+    li.appendChild(button);
+    li.id = todo.id;   
   };
 };
 
 const handler = (event) => {
-  event.preventDefault();
-  
+  event.preventDefault(); 
+
   const todo = {
     id: Date.now(), 
     text: input.value,
   };
 
-  todos.push(todo);
-  addItem(todo);  
+  todos.push(todo); 
+  addItem(todo);
   save();
   input.value = '';
 };
 
-//로컬스트로지에 있는 내용을 화면에 뿌려줌
+//로컬스트로지에 있는 내용을 화면에 뿌려주는 함수
 const init = () => {
+  //localStorage.getItem(키값전달);
   //const userTodos = localStorage.getItem('todos'); -> 배열,객체형태로 볼수 없음 
   const userTodos = JSON.parse(localStorage.getItem('todos'));
-  //console.log(userTodos);
+  console.log(userTodos);
 
-/*   userTodos.forEach((todo) => {
+  /* 
+  userTodos.forEach((todo) => {
     addItem(todo);
   });
-  todos = userTodos; 
-  문제:기존의 데이터가 있는 경우는 잘  되지만, 만약에 로컬스토리지를 삭제하고 새로고침을 누른후에 실행하면 에러가 남
+  todos = userTodos;
+  문제:기존의 데이터가 있는 경우는 잘  되지만, 만약에 로컬스토리지를 삭제하고 새로고침을 누른후에 실행하면 에러가 남 
   */
 
-  //로컬스토리지에 데이터가 있는 경우만 실행
+  //해결:로컬스토리지에 데이터가 있는 경우만 실행
   if(userTodos){
     userTodos.forEach((todo) => {
       addItem(todo);
     });
-    todos = userTodos;
-  }
-
+  };
 };
 
 init();
-form.addEventListener('submit',handler);
+form.addEventListener('submit', handler);

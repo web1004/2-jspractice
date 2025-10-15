@@ -38,7 +38,7 @@ function updateStatusDisplay(){
 
 //(3-1)
 //입력목록의 유효성검사 함수(패널들에 입력이 되었는지 안되었는지 확인)
-//입력을 해야히지만 이전다음버튼 나오게 함
+//입력을 해야지만 이전다음버튼 나오게 함
 function validateEntry(){
   //각 단계별로 패널안의 내용(첫 단계 input) 
   let input = tabPanels[currentStep].querySelector('.form-input'); //urrentStep(0)현재단계

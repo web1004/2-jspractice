@@ -9,11 +9,11 @@ let timerId;
 
 let [msec, sec, min] = [0, 0, 0];  //구조분해할당
 
-//(2)화면에 뿌려주기
+//(2)화면에 뿌리기
 const displayTimer = () => {
   const time = document.querySelector('.time');
 
-  //삼항조건연산자: 조건식 ? 참일때실행문 : 거짓일때 실행문
+  //삼항조건 연산자 : 조건식 ? 참일때 실행문 : 거짓일때 실행문;
   const fMin = min < 10 ? `0${min}` : min;
   const fSec = sec < 10 ? `0${sec}` : sec;
   const fMsec = msec < 10 ? `0${msec}` : msec;
@@ -25,28 +25,28 @@ const displayTimer = () => {
 const timer = () => {
   msec++; //0.01초씩 증가  100->1
 
-  if (msec === 100) {  //100밀리초가 되면 1초
+  if(msec === 100){  //100밀리초가 되면 1초
     msec = 0;
     sec++;
     if(sec === 60) { //60초가 되면 1분이 됨
       sec = 0;
       min++;
-    }
-  }
+    };
+  };
   displayTimer();
 };
 
 //(3)각 버튼 조작
 const start = () => {
-  timerId = setInterval(timer, 10);  //0.01초
+  timerId = setInterval(timer, 10); //0.01초
 };
 const stop = () => {
   clearInterval(timerId);
 };
 const reset = () => {
-  stop();
-  [msec, sec, min] = [0, 0, 0];
-  displayTimer(); 
+  stop();  //멈추고
+  [msec, sec, min] = [0, 0, 0];  //구조분해할당으로 0 넣기
+  displayTimer(); //0을 화면에 다시 출력
 };
 
 startButton.addEventListener('click', start);

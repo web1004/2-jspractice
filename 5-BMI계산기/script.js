@@ -8,35 +8,35 @@ const display = (bmi) => {
   const result = document.querySelector('.result');
   let group;
 
-  if (bmi >= 30.0) {
+  if(bmi >= 30.0){
     group = '중등도비만';
-  } else if (bmi >= 25.0) {
+  }else if(bmi >= 25.0){
     group = '경도비만';
-  } else if (bmi >= 23.0) {
+  }else if(bmi >= 23.0){
     group = '과제충';
-  } else if (bmi >= 18.5) {
+  }else if(bmi >= 18.5){
     group = '정상';
-  } else {
+  }else{
     group = '저체중';
-  }
+  };
 
   result.innerText = `${bmi} ▶ ${group}`;
-
 };
 
 //(2)BMI 지수계산 함수작성
 const calculate = (weight, height) => {
-  return (weight / (height*height)).toFixed(1);  //소수 1자리까지만 나옴
+  return (weight / (height*height)).toFixed(1);  //소수 1자리까지만 나옴;
 };
 
-//(1)formHandler 함수작성
+//(1)formHandler 함수작성(키와 몸무게를 입력받기)
 const formHandler = (event) => {
-  event.preventDefault();  //폼이 제출할때마다 새로고침되는 것을 막음
+  event.preventDefault(); //폼이 제출할때마다 새로고침되는 것을 막음
 
   const heightInput = document.querySelector('#height');
   const weightInput = document.querySelector('#weight');
 
-  if(heightInput.value !== '' && weightInput !== ''){ //내용이 비어있지 않다면 실행
+  //내용이 비어있지 않다면 실행
+  if(heightInput.value !== '' && weightInput !== ''){
     const weight = weightInput.value;
     const height = heightInput.value / 100;
     const bmi = calculate(weight, height);

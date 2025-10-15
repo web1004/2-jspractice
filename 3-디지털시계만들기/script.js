@@ -21,13 +21,6 @@ function clock(){
   hour.innerText = addZero(now.getHours());
   min.innerText = addZero(now.getMinutes());
   sec.innerText = addZero(now.getSeconds());
-
-  /* 한자리 숫자일때와 두자리숫자일때 차이가 남
-  hour.innerText = now.getHours();
-  min.innerText = now.getMinutes();
-  sec.innerText = now.getSeconds(); */
 };
 
 setInterval(clock, 1000);  //1초마다 실행
-
-

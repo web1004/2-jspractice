@@ -8,7 +8,7 @@ const addItem = (text) => {
   if(text !== ''){
     const li = document.createElement('li'); 
     li.innerText = input.value; 
-    ul.appendChild(li);  
+    ul.appendChild(li); 
   };
 };
 
@@ -18,15 +18,16 @@ const handler = (event) => {
   input.value = '';
 };
 
-form.addEventListener('submit',handler);
+form.addEventListener('submit', handler);
 
-/*아래 내용을 동작에 따라 2개의 함수로 분리  
+/* 아래 내용을 동작에 따라 2개의 함수로 분리
 form.addEventListener('submit', (event) => {
-  event.preventDefault();  
+  event.preventDefault(); 
+
   if(input.value !== ''){
     const li = document.createElement('li'); 
     li.innerText = input.value; 
-    ul.appendChild(li);  
+    ul.appendChild(li); 
     input.value = '';
   };
 }); */
