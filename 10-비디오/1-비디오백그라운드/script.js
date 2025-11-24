@@ -1,6 +1,6 @@
 const button = document.querySelector('button');
 
-//비디오가 정지되어 있다면 버튼의 텍스트를 pause로 지정하고 비디오를 재생을 시켜줄거고, 비디오가 재생될때 버튼의 텍스트는 play로 지정하고 비디오재생을 멈추게
+/* 비디오가 정지되어 있다면 버튼의 텍스트를 pause로 지정하고 비디오를 재생을 시켜줄거고, 비디오가 재생될때 버튼의 텍스트는 play로 지정하고 비디오재생을 멈추게 */
 const togglePlay = () => {
   const video =document.querySelector('video');
   console.log(video.paused);

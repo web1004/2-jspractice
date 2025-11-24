@@ -14,17 +14,17 @@ nextButton.addEventListener('click', () => {
 
   tabTargets[currentStep+1].classList.add('active');
   tabPanels[currentStep+1].classList.remove('hidden');
-  currentStep++;
 
+  currentStep++;
   updateStatusDisplay(); //입력단계 업데이트 함수 호출
 });
 
 //입력단계 업데이트 함수
 //클래스 hidden을 추가해서 안보이게 하고, hidden을 삭제해서 보이게 함
 function updateStatusDisplay(){
-  if(currentStep === tabTargets.length-1){ //마지막 단계일때
+  if(currentStep === tabTargets.length-1){  //마지막 단계일때
     nextButton.classList.add('hidden'); 
-    prevButton.classList.remove('hidden');  
+    prevButton.classList.remove('hidden');
     submitButton.classList.remove('hidden');
   }else if(currentStep === 0){ //첫단계일때
     nextButton.classList.remove('hidden');

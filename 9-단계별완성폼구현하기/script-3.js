@@ -14,8 +14,8 @@ nextButton.addEventListener('click', () => {
 
   tabTargets[currentStep+1].classList.add('active');
   tabPanels[currentStep+1].classList.remove('hidden');
-  currentStep++;
 
+  currentStep++;
   validateEntry(); //(3-3)입력상태에 따라서 이전다음버튼 비활성화(업데이트)
   updateStatusDisplay(); 
 });
@@ -23,33 +23,35 @@ nextButton.addEventListener('click', () => {
 function updateStatusDisplay(){
   if(currentStep === tabTargets.length-1){ 
     nextButton.classList.add('hidden'); 
-    prevButton.classList.remove('hidden');  
+    prevButton.classList.remove('hidden');
     submitButton.classList.remove('hidden');
   }else if(currentStep === 0){ 
     nextButton.classList.remove('hidden');
     prevButton.classList.add('hidden');
     submitButton.classList.add('hidden');
-  }else{
+  }else{ 
     nextButton.classList.remove('hidden');
     prevButton.classList.remove('hidden');
     submitButton.classList.add('hidden');
   };
 };
 
-//(3-1)
+// (3-1)
 //입력목록의 유효성검사 함수(패널들에 입력이 되었는지 안되었는지 확인)
 //입력을 해야지만 이전다음버튼 나오게 함
 function validateEntry(){
   //각 단계별로 패널안의 내용(첫 단계 input) 
-  let input = tabPanels[currentStep].querySelector('.form-input'); //urrentStep(0)현재단계
-  nextButton.setAttribute('disabled', true);  //첫단계에서는 다음버튼 비활성화
-  submit.setAttribute('disabled', true); //첫단계에서는 전송버튼도 비활성화
+  let input = tabPanels[currentStep].querySelector('.form-input'); //currentStep(0)현재단계
+  nextButton.setAttribute('disabled', true);  //첫단계에서는 (입력하기전) 다음버튼 비활성화
+  submit.setAttribute('disabled', true); //첫단계에서는 (입력하기전) 전송버튼도 비활성화
 
   //입력을 하면 활성화되어야 함(현재 input을 넣어줘서 내용이 있는지 검사를 해서 알려주는 역할함수) 
   setButtonPermissions(input);
 
-  input.addEventListener('input',()=>setButtonPermissions(input)); //input에 입력을 하고 있을때(사용자가 입력한 내용을 실시간으로 넘김)
-  input.addEventListener('blur',()=>setButtonPermissions(input));  //input 밖을 클릭(포커스가 풀리면)을 할때도(입력이 끝나면,입력을 안하고 넘어갈수도 있음)
+  //input에 입력을 하고 있을때(사용자가 입력한 내용을 실시간으로 넘김)
+  input.addEventListener('input',()=>setButtonPermissions(input));
+  //input 밖을 클릭(포커스가 풀리면)을 할때도(입력이 끝나면,입력을 안하고 넘어갈수도 있음)
+  input.addEventListener('blur',()=>setButtonPermissions(input));
 };
 
 //(3-2)입력한 내용이 있는지없는지 판별함수 

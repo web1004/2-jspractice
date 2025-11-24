@@ -15,14 +15,6 @@ const pause = () => {
 
 const togglePlay = () => {
   video.paused ? play() : pause();
-
-  /* if(video.paused){
-    playButton.innerText = '||';
-    video.play();
-  }else{
-    playButton.innerText = '▶';
-    video.pause();
-  } */
 };
 
 playButton.addEventListener('click', togglePlay);

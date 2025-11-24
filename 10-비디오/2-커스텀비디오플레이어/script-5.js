@@ -1,13 +1,25 @@
-//04-시간표시(비디오 전체재생시간과 현재 재생시간을 실시간)
+//05-하단 프로그래스바(진행바)
 
 const video = document.querySelector('video');
 const playButton = document.querySelector('.play-pause');
-const rateButtons = document.querySelectorAll('.rate');
+const rateButtons = document.querySelectorAll('.rate'); 
 const volumeBar = document.querySelector('input');
 
-const formatting = (time) => {  //time에는 비디오 객체가 넘겨주는 시간정도를 받음
+const updateProgress = () => {
+  //console.log((video.currentTime / video.duration) * 100);
+  const percent = (video.currentTime / video.duration) * 100;
+  const progressBar = document.querySelector('.bar');
+  progressBar.style.width = `${percent}%`;
+
+  //비디오 재생이 다 끝나도 pause버튼이 play 버튼으로 바뀌지 않는문제
+  if (video.ended) {
+    pause();
+  }
+};
+
+const formatting = (time) => {  
   const sec = Math.floor(time % 60);
-  const min = Math.floor(time / 60) % 60; //분에 해당하는 값을 구한다음에 60분이 넘지 않도록 함
+  const min = Math.floor(time / 60) % 60; 
   const hour = Math.floor(time / 3600); 
 
   const fSec = sec < 10 ? `0${sec}` : sec;
@@ -19,24 +31,19 @@ const formatting = (time) => {  //time에는 비디오 객체가 넘겨주는 �
 
 const updateTime = () => {
   const current = document.querySelector('.current');
-  const duration = document.querySelector('.duration'); 
-
-  // current.innerText = '현재';
-  // duration.innerText = '전체';
-
-  // current.innerText = video.currentTime;
-  // duration.innerText = video.duration;
-
+  const duration = document.querySelector('.duration');
+  
   current.innerText = formatting(video.currentTime);
   duration.innerText = formatting(video.duration);
 };
 
 const setVolume = (event) => {
+  console.log(event.target.value); 
   video.volume = event.target.value;
 };
 
 const setRate = (event) => {
-  const { rate } = event.target.dataset;
+  const {rate} = event.target.dataset;
   video.playbackRate = rate;
 };
 
@@ -60,3 +67,4 @@ rateButtons.forEach((button) => {
 });
 volumeBar.addEventListener('change', setVolume);
 video.addEventListener('timeupdate', updateTime);
+video.addEventListener('timeupdate', updateProgress);
